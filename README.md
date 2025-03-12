@@ -37,9 +37,9 @@ Limit 10;
 |Mercedes-Benz SL (SL 350)|72000.00|
 
 ***Kết luận***
-- o Mặc dù tuabin gió được coi là nguồn năng lượng tái tạo thân thiện với môi trường, nhưng quá trình sản xuất và lắp đặt chúng tạo ra lượng khí thải carbon rất lớn. 
-- o Các mẫu xe cao cấp như Mercedes-Benz GLE và S-Class thải carbon đáng kể, phản ánh tác động môi trường từ quá trình sản xuất, vận hành và tiêu thụ nhiên liệu.
-- o ngành xây dựng, đặc biệt là các công trình có sử dụng thép và bê tông, đóng góp đáng kể vào lượng phát thải CO2.
+- Mặc dù tuabin gió được coi là nguồn năng lượng tái tạo thân thiện với môi trường, nhưng quá trình sản xuất và lắp đặt chúng tạo ra lượng khí thải carbon rất lớn. 
+- Các mẫu xe cao cấp như Mercedes-Benz GLE và S-Class thải carbon đáng kể, phản ánh tác động môi trường từ quá trình sản xuất, vận hành và tiêu thụ nhiên liệu.
+- ngành xây dựng, đặc biệt là các công trình có sử dụng thép và bê tông, đóng góp đáng kể vào lượng phát thải CO2.
 
 
 
