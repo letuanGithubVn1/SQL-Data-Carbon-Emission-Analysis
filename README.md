@@ -35,7 +35,7 @@ Limit 10;
 |Mercedes-Benz GLE (GLE 500 4MATIC)|91000.00|
 |Mercedes-Benz S-Class (S 500)|85000.00|
 |Mercedes-Benz SL (SL 350)|72000.00|
-
+![Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất] (https://github.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/blob/main/images/Average%20of%20carbon_footprint_pcf.png)
 ***Kết luận***
 - Mặc dù tuabin gió được coi là nguồn năng lượng tái tạo thân thiện với môi trường, nhưng quá trình sản xuất và lắp đặt chúng tạo ra lượng khí thải carbon rất lớn. 
 - Các mẫu xe cao cấp như Mercedes-Benz GLE và S-Class thải carbon đáng kể, phản ánh tác động môi trường từ quá trình sản xuất, vận hành và tiêu thụ nhiên liệu.
