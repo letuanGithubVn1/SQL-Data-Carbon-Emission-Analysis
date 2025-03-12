@@ -36,7 +36,7 @@ Limit 10;
 |Mercedes-Benz S-Class (S 500)|85000.00|
 |Mercedes-Benz SL (SL 350)|72000.00|
 
-![Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất] (https://github.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/blob/main/images/Average%20of%20carbon_footprint_pcf.png)
+![Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất] (images/Average of carbon_footprint_pcf.png)
 
 ***Kết luận***
 - Mặc dù tuabin gió được coi là nguồn năng lượng tái tạo thân thiện với môi trường, nhưng quá trình sản xuất và lắp đặt chúng tạo ra lượng khí thải carbon rất lớn. 
