@@ -60,7 +60,7 @@ LIMIT 10;
 
 <table style="width:100%;">
   <tr>
-    <td style="width:40%; vertical-align:top;">
+    <td style="width:330%; vertical-align:top;">
       <h3>Top 10 Ngành Có Lượng Carbon Footprint Cao Nhất</h3>
       <table>
         <tr>
@@ -109,7 +109,7 @@ LIMIT 10;
         </tr>
       </table>
     </td>
-    <td style="width:60%; text-align:center;">
+    <td style="width:70%; text-align:center;">
       <h3>Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất</h3>
       <img src="https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/Sum%20of%20carbon_footprint_pcf.png" alt="Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất" style="max-width:100%; height:auto;">
     </td>
