@@ -15,26 +15,28 @@ Select * From product_emissions pe limit 3;
 ## Phân tích dữ liệu
 ### 1. Những sản phẩm nào đóng góp nhiều nhất vào lượng khí thải carbon?
 ***Mục tiêu của truy vấn:***
-Truy vấn này giúp tìm ra 10 sản phẩm có mức phát thải carbon trung bình cao nhất trong cơ sở dữ liệu.
+Truy vấn này giúp tìm ra 10 sản phẩm có mức phát thải carbon trung bình cao nhất và nhóm ngành của các sản phẩm.
 ```sql
-Select product_name, ROUND(AVG(carbon_footprint_pcf), 2) as average_pcf
-From product_emissions pe 
-Group by pe.product_name 
-Order by average_pcf DESC
+Select pe.product_name, ROUND(AVG(pe.carbon_footprint_pcf), 2) as average_pcf, ig.industry_group
+FRom product_emissions pe
+Join industry_groups ig ON pe.industry_group_id = ig.id
+Group by pe.product_name
+Order By  pe.carbon_footprint_pcf DESC
 Limit 10;
 ```
-|product_name|average_pcf|
-|------------|-----------|
-|Wind Turbine G128 5 Megawats|3718044.00|
-|Wind Turbine G132 5 Megawats|3276187.00|
-|Wind Turbine G114 2 Megawats|1532608.00|
-|Wind Turbine G90 2 Megawats|1251625.00|
-|Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV def unit.|191687.00|
-|Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall|167000.00|
-|TCDE|99075.00|
-|Mercedes-Benz GLE (GLE 500 4MATIC)|91000.00|
-|Mercedes-Benz S-Class (S 500)|85000.00|
-|Mercedes-Benz SL (SL 350)|72000.00|
+|product_name|average_pcf|industry_group|
+|------------|-----------|--------------|
+|Wind Turbine G128 5 Megawats|3718044.00|Electrical Equipment and Machinery|
+|Wind Turbine G132 5 Megawats|3276187.00|Electrical Equipment and Machinery|
+|Wind Turbine G114 2 Megawats|1532608.00|Electrical Equipment and Machinery|
+|Wind Turbine G90 2 Megawats|1251625.00|Electrical Equipment and Machinery|
+|Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV def unit.|191687.00|Automobiles & Components|
+|Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall|167000.00|Materials|
+|TCDE|99075.00|Materials|
+|Mercedes-Benz GLE (GLE 500 4MATIC)|91000.00|Automobiles & Components|
+|Mercedes-Benz S-Class (S 500)|85000.00|Automobiles & Components|
+|Mercedes-Benz SL (SL 350)|72000.00|Automobiles & Components|
+
 
 ![Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất](https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/Average%20of%20carbon_footprint_pcf.png)
 
@@ -43,6 +45,43 @@ Limit 10;
 - Các mẫu xe cao cấp như Mercedes-Benz GLE và S-Class thải carbon đáng kể, phản ánh tác động môi trường từ quá trình sản xuất, vận hành và tiêu thụ nhiên liệu.
 - ngành xây dựng, đặc biệt là các công trình có sử dụng thép và bê tông, đóng góp đáng kể vào lượng phát thải CO2.
 
+
+### 1. Những ngành công nghiệp nào có mức đóng góp khí thải carbon cao nhất?
+***Mục tiêu của truy vấn:***
+Tìm ra 10 nhóm ngành có mức phát thải carbon cao nhất. Xác định tổng lượng khí thải CO₂ của từng ngành để so sánh.
+```sql
+SELECT ig.industry_group, ROUND(SUM(pe.carbon_footprint_pcf), 2) as total_pcf
+FROM product_emissions pe
+JOIN industry_groups ig ON pe.industry_group_id = ig.id
+GROUP by ig.industry_group
+ORDER BY  total_pcf DESC
+LIMIT 10;
+```
+|industry_group|total_pcf|
+|--------------|---------|
+|Electrical Equipment and Machinery|9801558.00|
+|Automobiles & Components|2582264.00|
+|Materials|577595.00|
+|Technology Hardware & Equipment|363776.00|
+|Capital Goods|258712.00|
+|"Food, Beverage & Tobacco"|111131.00|
+|"Pharmaceuticals, Biotechnology & Life Sciences"|72486.00|
+|Chemicals|62369.00|
+|Software & Services|46544.00|
+|Media|23017.00|
+
+![Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất](https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/Sum%20of%20carbon_footprint_pcf.png)
+
+***Nhận Định***
+- Ngành thiết bị điện & máy móc dẫn đầu về phát thải CO₂ với hơn 9.8 triệu tấn CO₂, cho thấy quy mô lớn và mức tiêu thụ năng lượng cao của ngành này.
+- Ngành ô tô & linh kiện đứng thứ hai với 2.58 triệu tấn CO₂, do chuỗi cung ứng phức tạp và mức tiêu thụ nguyên liệu cao.
+- Các ngành sản xuất vật liệu và phần cứng công nghệ cũng có mức phát thải đáng kể, phản ánh tác động môi trường của sản xuất công nghiệp.
+- Ngành dược phẩm và công nghệ phần mềm có mức phát thải thấp hơn, nhưng vẫn có tác động đến môi trường.
+
+***Kết Luận***
+_ Các ngành công nghiệp có mức phát thải CO₂ cao nhất chủ yếu thuộc lĩnh vực sản xuất và công nghiệp nặng.
+- Các ngành dịch vụ như phần mềm và truyền thông có mức phát thải thấp hơn, nhưng vẫn cần xem xét tác động môi trường.
+- Kết quả này giúp các doanh nghiệp và chính phủ định hướng giảm thiểu lượng phát thải, áp dụng năng lượng sạch và cải tiến quy trình sản xuất để hướng đến mục tiêu Net Zero.
 
 
 
