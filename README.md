@@ -200,7 +200,7 @@ Limit 10;
   </tr>
 </table>
 
-***Nhận Định: ***
+***Nhận Định:***
 - Gamesa Corporación Tecnológica, S.A. đứng đầu danh sách với gần 9.8 triệu tấn CO₂, chủ yếu do sản xuất tua-bin gió, mặc dù là một nguồn năng lượng tái tạo nhưng quá trình sản xuất lại tạo ra lượng phát thải lớn.
 - Các hãng ô tô như Daimler AG, Volkswagen AG, General Motors, và Hino Motors có tổng phát thải cao do chuỗi cung ứng sản xuất xe hơi và linh kiện tiêu tốn nhiều nguyên liệu và năng lượng.
 - Công ty Mitsubishi Gas Chemical và Arcelor Mittal có lượng phát thải đáng kể, phản ánh mức độ ảnh hưởng của ngành hóa chất và sản xuất thép đến môi trường.
