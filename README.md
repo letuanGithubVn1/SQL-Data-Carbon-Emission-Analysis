@@ -46,21 +46,20 @@ Limit 10;
 - ngành xây dựng, đặc biệt là các công trình có sử dụng thép và bê tông, đóng góp đáng kể vào lượng phát thải CO2.
 
 
-### 1. Những ngành công nghiệp nào có mức đóng góp khí thải carbon cao nhất?
+### 2. Những ngành công nghiệp nào có mức đóng góp khí thải carbon cao nhất?
 ***Mục tiêu của truy vấn:***
 Tìm ra 10 nhóm ngành có mức phát thải carbon cao nhất. Xác định tổng lượng khí thải CO₂ của từng ngành để so sánh.
 ```sql
-SELECT ig.industry_group, ROUND(SUM(pe.carbon_footprint_pcf), 2) as total_pcf
-FROM product_emissions pe
-JOIN industry_groups ig ON pe.industry_group_id = ig.id
-GROUP by ig.industry_group
-ORDER BY  total_pcf DESC
+Select ig.industry_group, ROUND(SUM(pe.carbon_footprint_pcf), 2) as total_pcf
+From product_emissions pe
+Join industry_groups ig ON pe.industry_group_id = ig.id
+Group by ig.industry_group
+Order By  total_pcf DESC
 LIMIT 10;
 ```
-
 <table style="width:100%;">
   <tr>
-    <td style="width:330%; vertical-align:top;">
+    <td style="width:30%; vertical-align:top;">
       <h3>Top 10 Ngành Có Lượng Carbon Footprint Cao Nhất</h3>
       <table>
         <tr>
@@ -124,12 +123,23 @@ LIMIT 10;
 - Ngành dược phẩm và công nghệ phần mềm có mức phát thải thấp hơn, nhưng vẫn có tác động đến môi trường.
 
 ***Kết Luận***
-_ Các ngành công nghiệp có mức phát thải CO₂ cao nhất chủ yếu thuộc lĩnh vực sản xuất và công nghiệp nặng.
+- Các ngành công nghiệp có mức phát thải CO₂ cao nhất chủ yếu thuộc lĩnh vực sản xuất và công nghiệp nặng.
 - Các ngành dịch vụ như phần mềm và truyền thông có mức phát thải thấp hơn, nhưng vẫn cần xem xét tác động môi trường.
 - Kết quả này giúp các doanh nghiệp và chính phủ định hướng giảm thiểu lượng phát thải, áp dụng năng lượng sạch và cải tiến quy trình sản xuất để hướng đến mục tiêu Net Zero.
 
 
-
+### 3. Những công ty nào có mức đóng góp khí thải carbon cao nhất?
+***Mục tiêu của truy vấn:***
+Tìm ra 10 công ty có mức phát thải carbon cao nhất. Xác định tổng lượng khí thải CO₂ của từng công ty để so sánh.
+```sql
+Select c.company_name, ROUND(SUM(pe.carbon_footprint_pcf), 2) as total_pcf_by_company, ig.industry_group
+From product_emissions pe 
+Join companies c On pe.company_id = c.id 
+Join industry_groups ig On pe.industry_group_id = ig.id
+Group by c.company_name
+order by total_pcf_by_company DESC
+Limit 10;
+```
 
 
 
