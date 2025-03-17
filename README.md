@@ -60,25 +60,62 @@ LIMIT 10;
 
 <table style="width:100%;">
   <tr>
-    <td style="width:40%;">
-      |industry_group|total_pcf|
-      |--------------|---------|
-      |Electrical Equipment and Machinery|9801558.00|
-      |Automobiles & Components|2582264.00|
-      |Materials|577595.00|
-      |Technology Hardware & Equipment|363776.00|
-      |Capital Goods|258712.00|
-      |"Food, Beverage & Tobacco"|111131.00|
-      |"Pharmaceuticals, Biotechnology & Life Sciences"|72486.00|
-      |Chemicals|62369.00|
-      |Software & Services|46544.00|
-      |Media|23017.00|
+    <td style="width:40%; vertical-align:top;">
+      <h3>Top 10 Ngành Có Lượng Carbon Footprint Cao Nhất</h3>
+      <table>
+        <tr>
+          <th>Industry Group</th>
+          <th>Total PCF</th>
+        </tr>
+        <tr>
+          <td>Electrical Equipment and Machinery</td>
+          <td>9,801,558.00</td>
+        </tr>
+        <tr>
+          <td>Automobiles & Components</td>
+          <td>2,582,264.00</td>
+        </tr>
+        <tr>
+          <td>Materials</td>
+          <td>577,595.00</td>
+        </tr>
+        <tr>
+          <td>Technology Hardware & Equipment</td>
+          <td>363,776.00</td>
+        </tr>
+        <tr>
+          <td>Capital Goods</td>
+          <td>258,712.00</td>
+        </tr>
+        <tr>
+          <td>Food, Beverage & Tobacco</td>
+          <td>111,131.00</td>
+        </tr>
+        <tr>
+          <td>Pharmaceuticals, Biotechnology & Life Sciences</td>
+          <td>72,486.00</td>
+        </tr>
+        <tr>
+          <td>Chemicals</td>
+          <td>62,369.00</td>
+        </tr>
+        <tr>
+          <td>Software & Services</td>
+          <td>46,544.00</td>
+        </tr>
+        <tr>
+          <td>Media</td>
+          <td>23,017.00</td>
+        </tr>
+      </table>
     </td>
-    <td style="width:60%;">
-      ![Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất](https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/Sum%20of%20carbon_footprint_pcf.png)
+    <td style="width:60%; text-align:center;">
+      <h3>Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất</h3>
+      <img src="https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/Sum%20of%20carbon_footprint_pcf.png" alt="Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất" style="max-width:100%; height:auto;">
     </td>
   </tr>
 </table>
+
 
 ***Nhận Định***
 - Ngành thiết bị điện & máy móc dẫn đầu về phát thải CO₂ với hơn 9.8 triệu tấn CO₂, cho thấy quy mô lớn và mức tiêu thụ năng lượng cao của ngành này.
