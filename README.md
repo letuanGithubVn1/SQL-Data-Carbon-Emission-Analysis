@@ -140,7 +140,6 @@ Group by c.company_name
 order by total_pcf_by_company DESC
 Limit 10;
 ```
-
 <table style="width:100%;">
   <tr>
     <td style="width:30%; vertical-align:top;">
@@ -217,10 +216,83 @@ Limit 10;
 - Công ty Mitsubishi Gas Chemical và Arcelor Mittal có lượng phát thải đáng kể, phản ánh mức độ ảnh hưởng của ngành hóa chất và sản xuất thép đến môi trường.
 - Lexmark International và Daikin Industries có mức phát thải thấp hơn so với các công ty trong ngành công nghiệp nặng, nhưng vẫn đáng kể trong lĩnh vực công nghệ và thiết bị điện.
 
+### 4. Những quốc gia nào có mức đóng góp khí thải carbon cao nhất?
+***Mục tiêu của truy vấn:***
+Tìm ra 10 nhóm quốc gia có mức phát thải carbon cao nhất.
+```sql
+Select c.country_name , ROUND(SUM(pe.carbon_footprint_pcf), 2) as total_pcf_by_company
+From product_emissions pe 
+Join countries c On pe.country_id = c.id 
+Group by c.country_name
+order by total_pcf_by_company DESC
+Limit 10;
+```
 
+<table style="width:100%;">
+  <tr>
+    <td style="width:30%; vertical-align:top;">
+      <h3>Top 10 quốc gia Có Lượng Carbon Footprint Cao Nhất</h3>
+      <table>
+        <tr>
+          <th>Country name</th>
+          <th>Total PCF</th>
+        </tr>
+         <tr>
+          <td>Spain</td>
+          <td>9,778,464.00</td>
+        </tr>
+        <tr>
+          <td>Germany</td>
+          <td>1,594,300.00</td>
+        </tr>
+        <tr>
+          <td>Germany</td>
+          <td>655,960.00</td>
+        </tr>
+        <tr>
+          <td>Japan</td>
+          <td>212,016.00</td>
+        </tr>
+        <tr>
+          <td>Japan</td>
+          <td>191,687.00</td>
+        </tr>
+        <tr>
+          <td>Luxembourg</td>
+          <td>167,007.00</td>
+        </tr>
+        <tr>
+          <td>Brazil</td>
+          <td>160,655.00</td>
+        </tr>
+        <tr>
+          <td>USA</td>
+          <td>137,007.00</td>
+        </tr>
+        <tr>
+          <td>USA</td>
+          <td>132,012.00</td>
+        </tr>
+        <tr>
+          <td>Japan</td>
+          <td>105,600.00</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width:70%; text-align:center;">
+      <h3>Biểu đồ Top 10 quốc gia thải carbon nhiều nhất</h3>
+      <img src="https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/Sum%20of%20carbon_footprint_pcf%20by%20country.png" alt="Biểu đồ Top 10 quốc gia thải carbon nhiều nhất"
+      style="max-width:100%; height:auto;">
+    </td>
+  </tr>
+</table>
 
-
-
+***Nhận định:***
+- Tây Ban Nha (Spain) có mức phát thải cao nhất, chủ yếu đến từ Gamesa Corporación Tecnológica, S.A., công ty chuyên sản xuất tua-bin gió. Điều này cho thấy dù là năng lượng tái tạo, quá trình sản xuất vẫn tạo ra lượng khí thải lớn.
+- Đức (Germany) đứng thứ hai, chủ yếu do các công ty sản xuất ô tô như Daimler AG và Volkswagen AG. Điều này phản ánh tác động môi trường lớn từ ngành công nghiệp ô tô.
+- Nhật Bản và Mỹ có mức phát thải tương đối cao, liên quan đến ngành công nghiệp ô tô (Hino Motors, General Motors) và công nghiệp hóa chất (Mitsubishi Gas Chemical).
+- Hàn Quốc, Brazil, Luxembourg và Hà Lan có lượng phát thải ở mức trung bình, cho thấy các nước này có một số ngành công nghiệp lớn nhưng không phải là trung tâm phát thải chính.
+- Ấn Độ có mức phát thải thấp nhất, có thể do sự tập trung vào ngành dịch vụ và sản xuất quy mô nhỏ hơn so với các nước phát triển.
 
 
 
