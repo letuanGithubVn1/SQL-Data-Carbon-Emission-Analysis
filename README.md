@@ -311,6 +311,8 @@ ORDER BY total_pcf
 |2016|1640182.00|
 |2015|10840415.00|
 
+![Biểu đồ tổng thải Carbon theo thời](https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/trend%20of%20carbon%20footprints%20(PCFs)%20over%20the%20years.png)
+
 ***Kết luận:***
 - **Sự gia tăng đột biến vào năm 2015:**
 Năm 2015 có mức phát thải cao nhất (10,840,415 tấn CO₂), gấp nhiều lần so với các năm còn lại.  
