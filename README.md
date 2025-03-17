@@ -149,46 +149,57 @@ Limit 10;
         <tr>
           <th>Comany name</th>
           <th>Total PCF</th>
+          <th>Industry Group</th>
         </tr>
         <tr>
           <td>Gamesa Corporación Tecnológica, S.A.</td>
           <td>9,778,464.00</td>
+          <td>Electrical Equipment and Machinery</td>
         </tr>
         <tr>
           <td>Daimler AG</td>
           <td>1,594,300.00</td>
+          <td>Automobiles & Components</td>
         </tr>
         <tr>
           <td>Volkswagen AG</td>
           <td>655,960.00</td>
+          <td>Automobiles & Components</td>
         </tr>
         <tr>
           <td>Mitsubishi Gas Chemical Company, Inc.</td>
           <td>212,016.00</td>
+          <td>Materials</td>
         </tr>
         <tr>
           <td>Hino Motors, Ltd.</td>
           <td>191,687.00</td>
+          <td>Automobiles & Components</td>
         </tr>
         <tr>
           <td>Arcelor Mittal</td>
           <td>167,007.00</td>
+          <td>Materials</td>
         </tr>
         <tr>
           <td>Weg S/A</td>
           <td>160,655.00</td>
+          <td>Capital Goods</td>
         </tr>
         <tr>
           <td>General Motors Company</td>
           <td>137,007.00</td>
+          <td>Automobiles & Components</td>
         </tr>
         <tr>
           <td>Lexmark International, Inc.</td>
           <td>132,012.00</td>
+          <td>Technology Hardware & Equipment</td>
         </tr>
         <tr>
           <td>Daikin Industries, Ltd.</td>
           <td>105,600.00</td>
+          <td>Capital Goods</td>
         </tr>
       </table>
     </td>
