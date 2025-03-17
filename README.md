@@ -57,20 +57,28 @@ GROUP by ig.industry_group
 ORDER BY  total_pcf DESC
 LIMIT 10;
 ```
-|industry_group|total_pcf|
-|--------------|---------|
-|Electrical Equipment and Machinery|9801558.00|
-|Automobiles & Components|2582264.00|
-|Materials|577595.00|
-|Technology Hardware & Equipment|363776.00|
-|Capital Goods|258712.00|
-|"Food, Beverage & Tobacco"|111131.00|
-|"Pharmaceuticals, Biotechnology & Life Sciences"|72486.00|
-|Chemicals|62369.00|
-|Software & Services|46544.00|
-|Media|23017.00|
 
-![Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất](https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/Sum%20of%20carbon_footprint_pcf.png)
+<table style="width:100%;">
+  <tr>
+    <td style="width:40%;">
+      |industry_group|total_pcf|
+      |--------------|---------|
+      |Electrical Equipment and Machinery|9801558.00|
+      |Automobiles & Components|2582264.00|
+      |Materials|577595.00|
+      |Technology Hardware & Equipment|363776.00|
+      |Capital Goods|258712.00|
+      |"Food, Beverage & Tobacco"|111131.00|
+      |"Pharmaceuticals, Biotechnology & Life Sciences"|72486.00|
+      |Chemicals|62369.00|
+      |Software & Services|46544.00|
+      |Media|23017.00|
+    </td>
+    <td style="width:60%;">
+      ![Biểu đồ Top 10 sản phẩm thải carbon nhiều nhất](https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/Sum%20of%20carbon_footprint_pcf.png)
+    </td>
+  </tr>
+</table>
 
 ***Nhận Định***
 - Ngành thiết bị điện & máy móc dẫn đầu về phát thải CO₂ với hơn 9.8 triệu tấn CO₂, cho thấy quy mô lớn và mức tiêu thụ năng lượng cao của ngành này.
