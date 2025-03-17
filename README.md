@@ -140,15 +140,187 @@ Group by c.company_name
 order by total_pcf_by_company DESC
 Limit 10;
 ```
+<table style="width:100%;">
+  <tr>
+    <td style="width:30%; vertical-align:top;">
+      <h3>Top 10 công ty Có Lượng Carbon Footprint Cao Nhất</h3>
+      <table>
+        <tr>
+          <th>Comany name</th>
+          <th>Total PCF</th>
+          <th>Industry Group</th>
+        </tr>
+        <tr>
+          <td>Gamesa Corporación Tecnológica, S.A.</td>
+          <td>9,778,464.00</td>
+          <td>Electrical Equipment and Machinery</td>
+        </tr>
+        <tr>
+          <td>Daimler AG</td>
+          <td>1,594,300.00</td>
+          <td>Automobiles & Components</td>
+        </tr>
+        <tr>
+          <td>Volkswagen AG</td>
+          <td>655,960.00</td>
+          <td>Automobiles & Components</td>
+        </tr>
+        <tr>
+          <td>Mitsubishi Gas Chemical Company, Inc.</td>
+          <td>212,016.00</td>
+          <td>Materials</td>
+        </tr>
+        <tr>
+          <td>Hino Motors, Ltd.</td>
+          <td>191,687.00</td>
+          <td>Automobiles & Components</td>
+        </tr>
+        <tr>
+          <td>Arcelor Mittal</td>
+          <td>167,007.00</td>
+          <td>Materials</td>
+        </tr>
+        <tr>
+          <td>Weg S/A</td>
+          <td>160,655.00</td>
+          <td>Capital Goods</td>
+        </tr>
+        <tr>
+          <td>General Motors Company</td>
+          <td>137,007.00</td>
+          <td>Automobiles & Components</td>
+        </tr>
+        <tr>
+          <td>Lexmark International, Inc.</td>
+          <td>132,012.00</td>
+          <td>Technology Hardware & Equipment</td>
+        </tr>
+        <tr>
+          <td>Daikin Industries, Ltd.</td>
+          <td>105,600.00</td>
+          <td>Capital Goods</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width:70%; text-align:center;">
+      <h3>Biểu đồ Top 10 công ty thải carbon nhiều nhất</h3>
+      <img src="https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/Sum%20of%20carbon_footprint_pcf.png" alt="Biểu đồ Top 10 công ty thải carbon nhiều nhất"
+      style="max-width:100%; height:auto;">
+    </td>
+  </tr>
+</table>
 
+***Nhận Định:***
+- Gamesa Corporación Tecnológica, S.A. đứng đầu danh sách với gần 9.8 triệu tấn CO₂, chủ yếu do sản xuất tua-bin gió, mặc dù là một nguồn năng lượng tái tạo nhưng quá trình sản xuất lại tạo ra lượng phát thải lớn.
+- Các hãng ô tô như Daimler AG, Volkswagen AG, General Motors, và Hino Motors có tổng phát thải cao do chuỗi cung ứng sản xuất xe hơi và linh kiện tiêu tốn nhiều nguyên liệu và năng lượng.
+- Công ty Mitsubishi Gas Chemical và Arcelor Mittal có lượng phát thải đáng kể, phản ánh mức độ ảnh hưởng của ngành hóa chất và sản xuất thép đến môi trường.
+- Lexmark International và Daikin Industries có mức phát thải thấp hơn so với các công ty trong ngành công nghiệp nặng, nhưng vẫn đáng kể trong lĩnh vực công nghệ và thiết bị điện.
 
+### 4. Những quốc gia nào có mức đóng góp khí thải carbon cao nhất?
+***Mục tiêu của truy vấn:***
+Tìm ra 10 nhóm quốc gia có mức phát thải carbon cao nhất.
+```sql
+Select c.country_name , ROUND(SUM(pe.carbon_footprint_pcf), 2) as total_pcf_by_company
+From product_emissions pe 
+Join countries c On pe.country_id = c.id 
+Group by c.country_name
+order by total_pcf_by_company DESC
+Limit 10;
+```
 
+<table style="width:100%;">
+  <tr>
+    <td style="width:30%; vertical-align:top;">
+      <h3>Top 10 quốc gia Có Lượng Carbon Footprint Cao Nhất</h3>
+      <table>
+        <tr>
+          <th>Country name</th>
+          <th>Total PCF</th>
+        </tr>
+         <tr>
+          <td>Spain</td>
+          <td>9,778,464.00</td>
+        </tr>
+        <tr>
+          <td>Germany</td>
+          <td>1,594,300.00</td>
+        </tr>
+        <tr>
+          <td>Germany</td>
+          <td>655,960.00</td>
+        </tr>
+        <tr>
+          <td>Japan</td>
+          <td>212,016.00</td>
+        </tr>
+        <tr>
+          <td>Japan</td>
+          <td>191,687.00</td>
+        </tr>
+        <tr>
+          <td>Luxembourg</td>
+          <td>167,007.00</td>
+        </tr>
+        <tr>
+          <td>Brazil</td>
+          <td>160,655.00</td>
+        </tr>
+        <tr>
+          <td>USA</td>
+          <td>137,007.00</td>
+        </tr>
+        <tr>
+          <td>USA</td>
+          <td>132,012.00</td>
+        </tr>
+        <tr>
+          <td>Japan</td>
+          <td>105,600.00</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width:70%; text-align:center;">
+      <h3>Biểu đồ Top 10 quốc gia thải carbon nhiều nhất</h3>
+      <img src="https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/Sum%20of%20carbon_footprint_pcf%20by%20country.png" alt="Biểu đồ Top 10 quốc gia thải carbon nhiều nhất"
+      style="max-width:100%; height:auto;">
+    </td>
+  </tr>
+</table>
 
+***Nhận định:***
+- Tây Ban Nha (Spain) có mức phát thải cao nhất, chủ yếu đến từ Gamesa Corporación Tecnológica, S.A., công ty chuyên sản xuất tua-bin gió. Điều này cho thấy dù là năng lượng tái tạo, quá trình sản xuất vẫn tạo ra lượng khí thải lớn.
+- Đức (Germany) đứng thứ hai, chủ yếu do các công ty sản xuất ô tô như Daimler AG và Volkswagen AG. Điều này phản ánh tác động môi trường lớn từ ngành công nghiệp ô tô.
+- Nhật Bản và Mỹ có mức phát thải tương đối cao, liên quan đến ngành công nghiệp ô tô (Hino Motors, General Motors) và công nghiệp hóa chất (Mitsubishi Gas Chemical).
+- Hàn Quốc, Brazil, Luxembourg và Hà Lan có lượng phát thải ở mức trung bình, cho thấy các nước này có một số ngành công nghiệp lớn nhưng không phải là trung tâm phát thải chính.
+- Ấn Độ có mức phát thải thấp nhất, có thể do sự tập trung vào ngành dịch vụ và sản xuất quy mô nhỏ hơn so với các nước phát triển.
 
+### 5. Xu hướng thải CO2 theo thời gian
+***Mục tiêu của truy vấn:***
+Lấy tổng lượng khí thải theo từng năm.
+```sql
+Select year, ROUND(SUM(carbon_footprint_pcf), 2) as total_pcf
+From product_emissions pe 
+GROUP by year
+ORDER BY total_pcf 
+```
+|year|total_pcf|
+|----|---------|
+|2017|340271.00|
+|2013|503857.00|
+|2014|624226.00|
+|2016|1640182.00|
+|2015|10840415.00|
 
-
-
-
+***Kết luận:***
+- **Sự gia tăng đột biến vào năm 2015:**
+Năm 2015 có mức phát thải cao nhất (10,840,415 tấn CO₂), gấp nhiều lần so với các năm còn lại.  
+Đây có thể là do sự mở rộng quy mô sản xuất hoặc một số ngành công nghiệp có mức phát thải cao gia tăng đáng kể hoạt động trong năm này.
+- **Mức phát thải dao động qua các năm trước đó:**
+Từ năm 2013 đến 2014, lượng phát thải tăng nhẹ từ **503,857 tấn CO₂** lên **624,226 tấn CO₂**.  
+Năm 2016, phát thải tiếp tục tăng lên **1,640,182 tấn CO₂**, cho thấy sự phát triển dần của các hoạt động công nghiệp có lượng khí thải cao.
+- **Năm 2017 có lượng phát thải thấp nhất trong dữ liệu:**
+Chỉ **340,271 tấn CO₂**, thấp hơn hẳn so với các năm trước.  
+Điều này có thể là do các biện pháp giảm phát thải được áp dụng, sự thay đổi trong công nghệ sản xuất, hoặc có sự sụt giảm trong hoạt động công nghiệp.
 
 
 
