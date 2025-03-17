@@ -324,8 +324,54 @@ Năm 2016, phát thải tiếp tục tăng lên **1,640,182 tấn CO₂**, cho t
 Chỉ **340,271 tấn CO₂**, thấp hơn hẳn so với các năm trước.  
 Điều này có thể là do các biện pháp giảm phát thải được áp dụng, sự thay đổi trong công nghệ sản xuất, hoặc có sự sụt giảm trong hoạt động công nghiệp.
 
-
-
+### 6. Nhóm ngành nào đã giảm lượng khí thải carbon nhiều nhất theo thời gian?
+***Mục tiêu của truy vấn:***
+Lấy tổng lượng khí thải của từng nhóm ngành theo từng năm để so sánh.
+```sql
+Select ig.industry_group,
+	ROUND(AVG(Case When pe.year = 2017 then pe.carbon_footprint_pcf Else null END), 2) as '2017',
+	ROUND(AVG(Case When pe.year = 2016 then pe.carbon_footprint_pcf Else null END), 2) as '2016',
+	ROUND(AVG(Case When pe.year = 2015 then pe.carbon_footprint_pcf Else null END), 2) as '2015',
+	ROUND(AVG(Case When pe.year = 2014 then pe.carbon_footprint_pcf Else null END), 2) as '2014',
+	ROUND(AVG(Case When pe.year = 2013 then pe.carbon_footprint_pcf Else null END), 2) as '2013'
+From product_emissions pe 
+Join industry_groups ig 
+ON pe.industry_group_id = ig.id
+GROUP by ig.industry_group
+Order by ig.industry_group 
+```
+|industry_group|2017|2016|2015|2014|2013|
+|--------------|----|----|----|----|----|
+|"Consumer Durables, Household and Personal Products"|||116.38|||
+|"Food, Beverage & Tobacco"|143.73|4011.56|0.00|99.44|94.25|
+|"Forest and Paper Products - Forestry, Timber, Pulp and Paper, Rubber"|||685.31|||
+|"Mining - Iron, Aluminum, Other Metals"|||2727.00|||
+|"Pharmaceuticals, Biotechnology & Life Sciences"||||40215.00|16135.50|
+|"Textiles, Apparel, Footwear and Luxury Goods"|||14.33|||
+|Automobiles & Components||40138.09|37146.68|20910.45|26037.80|
+|Capital Goods|18989.80|796.13|3505.00|10411.00|5015.83|
+|Chemicals|||1949.03|||
+|Commercial & Professional Services|370.50|96.33||119.25|144.63|
+|Consumer Durables & Apparel||40.07||113.10|286.70|
+|Containers & Packaging|||373.50|||
+|Electrical Equipment and Machinery|||891050.73|||
+|Energy||2506.00|||750.00|
+|Food & Beverage Processing|||7.05|||
+|Food & Staples Retailing||0.50|70.60|77.30||
+|Gas Utilities|||61.00|||
+|Household & Personal Products|||||0.00|
+|Materials|11217.74|1401.06||1513.56|4177.35|
+|Media||602.67|479.75|2411.25|2411.25|
+|Retailing|||5.50|6.33||
+|Semiconductors & Semiconductor Equipment||2.00||16.67||
+|Semiconductors & Semiconductors Equipment|||1.00|||
+|Software & Services|690.00|2538.44|1523.73|29.20|1.50|
+|Technology Hardware & Equipment|788.34|65.25|1895.66|1780.44|1053.45|
+|Telecommunication Services|||45.75|45.75|52.00|
+|Tires|||1011.00|||
+|Tobacco|||1.00|||
+|Trading Companies & Distributors and Commercial Services & Supplies|||39.83|||
+|Utilities||61.00|||61.00|
 
 
 
