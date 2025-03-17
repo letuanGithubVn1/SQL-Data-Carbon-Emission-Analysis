@@ -312,13 +312,13 @@ ORDER BY total_pcf
 |2015|10840415.00|
 
 ***Kết luận:***
-**Sự gia tăng đột biến vào năm 2015**
+- **Sự gia tăng đột biến vào năm 2015**
 Năm 2015 có mức phát thải cao nhất (10,840,415 tấn CO₂), gấp nhiều lần so với các năm còn lại.  
 Đây có thể là do sự mở rộng quy mô sản xuất hoặc một số ngành công nghiệp có mức phát thải cao gia tăng đáng kể hoạt động trong năm này.
-**Mức phát thải dao động qua các năm trước đó**
+- **Mức phát thải dao động qua các năm trước đó**
 Từ năm 2013 đến 2014, lượng phát thải tăng nhẹ từ **503,857 tấn CO₂** lên **624,226 tấn CO₂**.  
 Năm 2016, phát thải tiếp tục tăng lên **1,640,182 tấn CO₂**, cho thấy sự phát triển dần của các hoạt động công nghiệp có lượng khí thải cao.
-**Năm 2017 có lượng phát thải thấp nhất trong dữ liệu**
+- **Năm 2017 có lượng phát thải thấp nhất trong dữ liệu**
 Chỉ **340,271 tấn CO₂**, thấp hơn hẳn so với các năm trước.  
 Điều này có thể là do các biện pháp giảm phát thải được áp dụng, sự thay đổi trong công nghệ sản xuất, hoặc có sự sụt giảm trong hoạt động công nghiệp.
 
