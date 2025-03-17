@@ -141,8 +141,70 @@ order by total_pcf_by_company DESC
 Limit 10;
 ```
 
+<table style="width:100%;">
+  <tr>
+    <td style="width:30%; vertical-align:top;">
+      <h3>Top 10 công ty Có Lượng Carbon Footprint Cao Nhất</h3>
+      <table>
+        <tr>
+          <th>Comany name</th>
+          <th>Total PCF</th>
+        </tr>
+        <tr>
+          <td>Gamesa Corporación Tecnológica, S.A.</td>
+          <td>9,778,464.00</td>
+        </tr>
+        <tr>
+          <td>Daimler AG</td>
+          <td>1,594,300.00</td>
+        </tr>
+        <tr>
+          <td>Volkswagen AG</td>
+          <td>655,960.00</td>
+        </tr>
+        <tr>
+          <td>Mitsubishi Gas Chemical Company, Inc.</td>
+          <td>212,016.00</td>
+        </tr>
+        <tr>
+          <td>Hino Motors, Ltd.</td>
+          <td>191,687.00</td>
+        </tr>
+        <tr>
+          <td>Arcelor Mittal</td>
+          <td>167,007.00</td>
+        </tr>
+        <tr>
+          <td>Weg S/A</td>
+          <td>160,655.00</td>
+        </tr>
+        <tr>
+          <td>General Motors Company</td>
+          <td>137,007.00</td>
+        </tr>
+        <tr>
+          <td>Lexmark International, Inc.</td>
+          <td>132,012.00</td>
+        </tr>
+        <tr>
+          <td>Daikin Industries, Ltd.</td>
+          <td>105,600.00</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width:70%; text-align:center;">
+      <h3>Biểu đồ Top 10 công ty thải carbon nhiều nhất</h3>
+      <img src="https://raw.githubusercontent.com/letuanGithubVn1/SQL-Data-Carbon-Emission-Analysis/main/images/Sum%20of%20carbon_footprint_pcf.png" alt="Biểu đồ Top 10 công ty thải carbon nhiều nhất"
+      style="max-width:100%; height:auto;">
+    </td>
+  </tr>
+</table>
 
-
+***Nhận Định: ***
+- Gamesa Corporación Tecnológica, S.A. đứng đầu danh sách với gần 9.8 triệu tấn CO₂, chủ yếu do sản xuất tua-bin gió, mặc dù là một nguồn năng lượng tái tạo nhưng quá trình sản xuất lại tạo ra lượng phát thải lớn.
+- Các hãng ô tô như Daimler AG, Volkswagen AG, General Motors, và Hino Motors có tổng phát thải cao do chuỗi cung ứng sản xuất xe hơi và linh kiện tiêu tốn nhiều nguyên liệu và năng lượng.
+- Công ty Mitsubishi Gas Chemical và Arcelor Mittal có lượng phát thải đáng kể, phản ánh mức độ ảnh hưởng của ngành hóa chất và sản xuất thép đến môi trường.
+- Lexmark International và Daikin Industries có mức phát thải thấp hơn so với các công ty trong ngành công nghiệp nặng, nhưng vẫn đáng kể trong lĩnh vực công nghệ và thiết bị điện.
 
 
 
